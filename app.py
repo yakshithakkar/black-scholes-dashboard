@@ -575,7 +575,7 @@ with tab_sens:
             annotation_font_size=10
            )
          except:
-         pass
+          pass
             dark_layout(fig, 320, title)
             fig.update_layout(
                 xaxis=dict(tickangle=-45, tickfont=dict(size=9)),
