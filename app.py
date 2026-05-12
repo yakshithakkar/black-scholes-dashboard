@@ -577,11 +577,11 @@ with tab_sens:
          except:
           pass
         dark_layout(fig, 320, title)
-            fig.update_layout(
+        fig.update_layout(
                 xaxis=dict(tickangle=-45, tickfont=dict(size=9)),
                 yaxis=dict(tickfont=dict(size=9)),
             )
-            st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+        st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
  
     st.markdown("<div class='section-label' style='margin-top:1rem;'>Greeks Across Spot Prices</div>", unsafe_allow_html=True)
     st.markdown("""<div class="callout teal">
