@@ -563,7 +563,7 @@ with tab_sens:
             ))
             # make sure atm_x is valid
         if atm_x is not None:
-        try:
+         try:
          atm_x = float(atm_x)
 
          fig.add_vline(
