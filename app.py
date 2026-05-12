@@ -564,16 +564,16 @@ with tab_sens:
             # make sure atm_x is valid
         if atm_x is not None:
          try:
-         atm_x = float(atm_x)
+          atm_x = float(atm_x)
 
-         fig.add_vline(
+          fig.add_vline(
             x=atm_x,
             line_color="rgba(245,166,35,0.5)",
             line_dash="dash",
             annotation_text="ATM",
             annotation_font_color="#f5a623",
             annotation_font_size=10
-          )
+           )
          except:
          pass
             dark_layout(fig, 320, title)
