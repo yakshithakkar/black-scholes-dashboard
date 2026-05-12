@@ -561,8 +561,21 @@ with tab_sens:
                 hovertemplate="Spot: %{x}<br>Vol: %{y}<br>Value: ₹%{z:.2f}<extra></extra>",
                 colorbar=dict(title="₹", tickfont=dict(color="#7a8290",size=10)),
             ))
-            fig.add_vline(x=atm_x, line_color="rgba(245,166,35,0.5)", line_dash="dash",
-                          annotation_text="ATM", annotation_font_color="#f5a623", annotation_font_size=10)
+            # make sure atm_x is valid
+        if atm_x is not None:
+        try:
+         atm_x = float(atm_x)
+
+         fig.add_vline(
+            x=atm_x,
+            line_color="rgba(245,166,35,0.5)",
+            line_dash="dash",
+            annotation_text="ATM",
+            annotation_font_color="#f5a623",
+            annotation_font_size=10
+          )
+         except:
+         pass
             dark_layout(fig, 320, title)
             fig.update_layout(
                 xaxis=dict(tickangle=-45, tickfont=dict(size=9)),
