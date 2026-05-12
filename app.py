@@ -640,14 +640,17 @@ with tab_pnl:
  
     fig_pnl = go.Figure()
     for y, clr, nm in [(pnl_c,"#00c9a7","Call P&L"), (pnl_p,"#ff5f7e","Put P&L")]:
+      import matplotlib.colors as mcolors
+      r, g, b = mcolors.to_rgb(clr)
+      fillcolor = f"rgba({int(r*255)}, {int(g*255)}, {int(b*255)}, 0.07)"
       fig_pnl.add_trace(go.Scatter(
-     x=se,
-     y=y,
-     name=nm,
-     line=dict(color=clr, width=2.5),
-     fill="tozeroy",
-     fillcolor=fillcolor,
-     hovertemplate="Spot: ₹%{x:,.0f}<br>P&L: ₹%{y:,.2f}<extra></extra>")),
+      x=se,
+      y=y,
+      name=nm,
+      line=dict(color=clr, width=2.5),
+      fill="tozeroy",
+      fillcolor=fillcolor,
+      hovertemplate="Spot: ₹%{x:,.0f}<br>P&L: ₹%{y:,.2f}<extra></extra>")),
     fig_pnl.add_hline(y=0, line_color="rgba(255,255,255,0.15)")
     fig_pnl.add_vline(x=S, line_color="rgba(245,166,35,0.5)", line_dash="dash",
                       annotation_text="Current Spot", annotation_font_color="#f5a623", annotation_font_size=10)
