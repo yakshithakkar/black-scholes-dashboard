@@ -576,7 +576,7 @@ with tab_sens:
            )
          except:
           pass
-            dark_layout(fig, 320, title)
+        dark_layout(fig, 320, title)
             fig.update_layout(
                 xaxis=dict(tickangle=-45, tickfont=dict(size=9)),
                 yaxis=dict(tickfont=dict(size=9)),
